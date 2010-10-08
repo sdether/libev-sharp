@@ -5,7 +5,7 @@ SLN=src/libev-sharp/libev-sharp.sln
 VERBOSITY=normal
 version=0.0.2
 install_bin_dir = $(prefix)/lib/libev-sharp/
-install_pc_dir = $(prefix)/lib/pkgconfig/
+install_pc_dir = $(pkg_config_path)
 distdir = "libev-sharp-$(version)"
 
 XBUILD_ARGS=/verbosity:$(VERBOSITY) /nologo
@@ -25,7 +25,7 @@ define LIBEV_SHARP_PC_SCRIPT
 Name: libev-sharp
 Description: Managed wrapper for the libev library.
 Version: $(version)
-Libraries=$(install_bin_dir)/libev-sharp.dll
+Libraries=$(install_bin_dir)/libev-sharp.dll $(install_bin_dir)/libev-sharp.dll.mdb
 
 Requires: 
 Libs: -r:$(install_bin_dir)libev-sharp.dll
