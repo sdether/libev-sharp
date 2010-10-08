@@ -25,6 +25,7 @@ define LIBEV_SHARP_PC_SCRIPT
 Name: libev-sharp
 Description: Managed wrapper for the libev library.
 Version: $(version)
+Libraries=$(install_bin_dir)/libev-sharp.dll
 
 Requires: 
 Libs: -r:$(install_bin_dir)libev-sharp.dll
