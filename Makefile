@@ -45,20 +45,20 @@ clean:
 install: install-bin install-pkg-config
 
 install-bin: all
-	test -d "$(install_bin_dir)" || mkdir "$(install_bin_dir)"
-	cp -rf ./build/* "$(install_bin_dir)"
+	test -d $(install_bin_dir) || mkdir $(install_bin_dir)
+	cp -rf ./build/* $(install_bin_dir)
 
 install-pkg-config:
-	test -d "$(install_pc_dir)" || mkdir "$(install_pc_dir)"
+	test -d $(install_pc_dir) || mkdir $(install_pc_dir)
 	echo "$$LIBEV_SHARP_PC_SCRIPT" > $(install_pc_dir)libev-sharp.pc
 
 uninstall:
-	rm -rf "$(installdir)"
+	rm -rf $(installdir)
 
 dist: clean
-	rm -rf "$(distdir)"
-	mkdir "$(distdir)"
-	cp -rf ./src/ "$(distdir)"
-	cp -rf configure Makefile "$(distdir)"
-	tar cjvf libev-sharp-"$(version)".tar.bz2 libev-sharp-"$(version)"
+	rm -rf $(distdir)
+	mkdir $(distdir)
+	cp -rf ./src/ $(distdir)
+	cp -rf configure Makefile $(distdir)
+	tar cjvf libev-sharp-$(version).tar.bz2 libev-sharp-$(version)
 
