@@ -5,7 +5,7 @@ SLN=src/libev-sharp/libev-sharp.sln
 VERBOSITY=normal
 version=0.0.2
 install_bin_dir = $(prefix)/lib/libev-sharp/
-install_pc_dir = $(pkg_config_path)
+install_pc_dir = $(pkg_config_path)/
 distdir = "libev-sharp-$(version)"
 
 XBUILD_ARGS=/verbosity:$(VERBOSITY) /nologo
